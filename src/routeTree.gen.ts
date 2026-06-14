@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ToolsRouteImport } from './routes/tools'
 import { Route as SmmPanelRouteImport } from './routes/smm-panel'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as PhysicalProductsRouteImport } from './routes/physical-products'
@@ -33,6 +34,11 @@ const ToolsRoute = ToolsRouteImport.update({
 const SmmPanelRoute = SmmPanelRouteImport.update({
   id: '/smm-panel',
   path: '/smm-panel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -110,6 +116,7 @@ export interface FileRoutesByFullPath {
   '/physical-products': typeof PhysicalProductsRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/smm-panel': typeof SmmPanelRoute
   '/tools': typeof ToolsRoute
   '/admin/orders': typeof AdminOrdersRoute
@@ -126,6 +133,7 @@ export interface FileRoutesByTo {
   '/physical-products': typeof PhysicalProductsRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/smm-panel': typeof SmmPanelRoute
   '/tools': typeof ToolsRoute
   '/admin/orders': typeof AdminOrdersRoute
@@ -144,6 +152,7 @@ export interface FileRoutesById {
   '/physical-products': typeof PhysicalProductsRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/smm-panel': typeof SmmPanelRoute
   '/tools': typeof ToolsRoute
   '/admin/orders': typeof AdminOrdersRoute
@@ -163,6 +172,7 @@ export interface FileRouteTypes {
     | '/physical-products'
     | '/reviews'
     | '/services'
+    | '/sitemap.xml'
     | '/smm-panel'
     | '/tools'
     | '/admin/orders'
@@ -179,6 +189,7 @@ export interface FileRouteTypes {
     | '/physical-products'
     | '/reviews'
     | '/services'
+    | '/sitemap.xml'
     | '/smm-panel'
     | '/tools'
     | '/admin/orders'
@@ -196,6 +207,7 @@ export interface FileRouteTypes {
     | '/physical-products'
     | '/reviews'
     | '/services'
+    | '/sitemap.xml'
     | '/smm-panel'
     | '/tools'
     | '/admin/orders'
@@ -214,6 +226,7 @@ export interface RootRouteChildren {
   PhysicalProductsRoute: typeof PhysicalProductsRoute
   ReviewsRoute: typeof ReviewsRoute
   ServicesRoute: typeof ServicesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SmmPanelRoute: typeof SmmPanelRoute
   ToolsRoute: typeof ToolsRoute
 }
@@ -232,6 +245,13 @@ declare module '@tanstack/react-router' {
       path: '/smm-panel'
       fullPath: '/smm-panel'
       preLoaderRoute: typeof SmmPanelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -355,6 +375,7 @@ const rootRouteChildren: RootRouteChildren = {
   PhysicalProductsRoute: PhysicalProductsRoute,
   ReviewsRoute: ReviewsRoute,
   ServicesRoute: ServicesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SmmPanelRoute: SmmPanelRoute,
   ToolsRoute: ToolsRoute,
 }
