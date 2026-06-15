@@ -6,8 +6,8 @@ import { Star } from "lucide-react";
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Reviews — DigitalBuddy" },
-      { name: "description", content: "Real reviews from 12,000+ DigitalBuddy customers worldwide." },
+      { title: "Reviews — Digital ToolVerse" },
+      { name: "description", content: "Real reviews from 12,000+ Digital ToolVerse customers worldwide." },
     ],
   }),
   component: Reviews,

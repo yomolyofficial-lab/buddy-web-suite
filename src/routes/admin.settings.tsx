@@ -14,7 +14,7 @@ function SettingsPage() {
       <div className="gradient-border rounded-2xl p-6 space-y-4">
         <div className="grid gap-2">
           <Label>Store name</Label>
-          <Input defaultValue="DigitalBuddy" className="bg-surface" />
+          <Input defaultValue="Digital ToolVerse" className="bg-surface" />
         </div>
         <div className="grid gap-2">
           <Label>Support email</Label>

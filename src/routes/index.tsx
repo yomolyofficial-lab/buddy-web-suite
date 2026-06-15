@@ -14,9 +14,9 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DigitalBuddy — Premium AI Tools, Services & Growth" },
+      { title: "Digital ToolVerse — Premium AI Tools, Services & Growth" },
       { name: "description", content: "Premium AI tools, smart services and growth solutions for creators, students and entrepreneurs. Trusted by 12,000+ users worldwide." },
-      { property: "og:title", content: "DigitalBuddy — Premium AI Tools, Services & Growth" },
+      { property: "og:title", content: "Digital ToolVerse — Premium AI Tools, Services & Growth" },
       { property: "og:description", content: "Premium AI tools, services and courses — all in one place." },
     ],
   }),
@@ -178,7 +178,7 @@ function Home() {
         eyebrow="Top Rated"
         title="Loved by creators"
         highlight="worldwide"
-        description="Real stories from creators, students and founders who scaled with DigitalBuddy."
+        description="Real stories from creators, students and founders who scaled with Digital ToolVerse."
       >
         <div className="grid md:grid-cols-3 gap-4">
           {[

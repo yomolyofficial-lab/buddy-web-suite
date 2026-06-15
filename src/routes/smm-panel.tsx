@@ -7,7 +7,7 @@ import { TrendingUp, Zap, ShieldCheck, RefreshCw } from "lucide-react";
 export const Route = createFileRoute("/smm-panel")({
   head: () => ({
     meta: [
-      { title: "SMM Panel — DigitalBuddy" },
+      { title: "SMM Panel — Digital ToolVerse" },
       { name: "description", content: "Real followers, likes, views and engagement across every major platform. Fast, secure, reliable." },
     ],
   }),

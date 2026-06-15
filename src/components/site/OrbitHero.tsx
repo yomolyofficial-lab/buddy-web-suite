@@ -103,7 +103,7 @@ export function OrbitHero() {
           <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl animate-pulse-glow" />
           <img
             src={orbitCore}
-            alt="DigitalBuddy energy core"
+            alt="Digital ToolVerse energy core"
             className="absolute inset-0 m-auto h-2/3 w-2/3 object-contain animate-float"
             width={1024}
             height={1024}
