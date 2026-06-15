@@ -7,8 +7,8 @@ import { DollarSign, Users, TrendingUp, Wallet } from "lucide-react";
 export const Route = createFileRoute("/affiliate-program")({
   head: () => ({
     meta: [
-      { title: "Affiliate Program — DigitalBuddy" },
-      { name: "description", content: "Earn up to 40% recurring commission on every referral. Join the DigitalBuddy affiliate program." },
+      { title: "Affiliate Program — Digital ToolVerse" },
+      { name: "description", content: "Earn up to 40% recurring commission on every referral. Join the Digital ToolVerse affiliate program." },
     ],
   }),
   component: Affiliate,
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/affiliate-program")({
 function Affiliate() {
   return (
     <Layout>
-      <Section eyebrow="Affiliate Program" title="Earn up to" highlight="40% recurring" description="Promote DigitalBuddy, refer creators and earn lifetime commissions on every sale.">
+      <Section eyebrow="Affiliate Program" title="Earn up to" highlight="40% recurring" description="Promote Digital ToolVerse, refer creators and earn lifetime commissions on every sale.">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             { icon: DollarSign, k: "40%", v: "Per sale commission" },

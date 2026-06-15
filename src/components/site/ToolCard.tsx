@@ -12,8 +12,17 @@ export function ToolCard({ tool }: { tool: Tool }) {
         </span>
       )}
       <div className="flex items-start gap-3">
-        <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-display text-xl font-bold">
-          {initial}
+        <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-surface border border-border overflow-hidden">
+          {tool.logo ? (
+            <img
+              src={tool.logo}
+              alt={`${tool.name} logo`}
+              loading="lazy"
+              className="h-7 w-7 object-contain"
+            />
+          ) : (
+            <span className="font-display text-xl font-bold text-primary">{initial}</span>
+          )}
         </div>
         <div className="min-w-0">
           <div className="text-xs uppercase tracking-wider text-muted-foreground">{tool.category}</div>

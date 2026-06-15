@@ -2,7 +2,7 @@ import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-r
 import { LayoutDashboard, Package, Users, ShoppingBag, Settings, Sparkles, LogOut } from "lucide-react";
 
 export const Route = createFileRoute("/admin")({
-  head: () => ({ meta: [{ title: "Admin — DigitalBuddy" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Admin — Digital ToolVerse" }, { name: "robots", content: "noindex" }] }),
   component: AdminShell,
 });
 

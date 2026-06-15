@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/tools")({
   head: () => ({
     meta: [
-      { title: "Premium AI Tools — DigitalBuddy" },
+      { title: "Premium AI Tools — Digital ToolVerse" },
       { name: "description", content: "Browse 500+ premium AI tools at the best prices — ChatGPT, Canva Pro, Adobe CC, Midjourney and more." },
-      { property: "og:title", content: "Premium AI Tools — DigitalBuddy" },
+      { property: "og:title", content: "Premium AI Tools — Digital ToolVerse" },
       { property: "og:description", content: "Premium AI tools at unbeatable prices." },
     ],
   }),

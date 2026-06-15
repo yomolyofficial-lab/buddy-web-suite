@@ -7,7 +7,7 @@ import { Gift, Lock, Sparkles, ShieldCheck } from "lucide-react";
 export const Route = createFileRoute("/giveaways")({
   head: () => ({
     meta: [
-      { title: "Giveaways — DigitalBuddy" },
+      { title: "Giveaways — Digital ToolVerse" },
       { name: "description", content: "Unlock premium digital assets worth $100+ for free. New giveaways every week." },
     ],
   }),
