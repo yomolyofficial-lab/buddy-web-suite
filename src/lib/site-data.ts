@@ -26,6 +26,9 @@ export const tools: Tool[] = [
   { slug: "quillbot", name: "QuillBot Premium", tagline: "Paraphrasing & grammar tools", price: "PKR 900", category: "Writing", logo: icon("quillbot", "00A98F") },
   { slug: "claude", name: "Claude Pro", tagline: "Anthropic's helpful AI assistant", price: "PKR 2,799", category: "AI", logo: icon("anthropic", "D97757") },
   { slug: "figma", name: "Figma Professional", tagline: "Collaborative design at scale", price: "PKR 2,100", category: "Design", logo: icon("figma", "F24E1E") },
+  { slug: "perplexity", name: "Perplexity Pro", tagline: "AI search with real-time sources & citations", price: "PKR 2,199", category: "AI", badge: "Hot", logo: icon("perplexity", "20808D") },
+  { slug: "elevenlabs", name: "ElevenLabs", tagline: "Ultra-realistic AI voice & text-to-speech", price: "PKR 1,899", category: "AI", logo: icon("elevenlabs") },
+  { slug: "higgsfield", name: "Higgsfield", tagline: "AI-powered video generation & editing", price: "PKR 3,499", category: "AI", badge: "New" },
 ];
 
 export const services = [
