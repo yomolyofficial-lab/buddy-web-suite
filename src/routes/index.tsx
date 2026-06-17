@@ -4,6 +4,7 @@ import { OrbitHero } from "@/components/site/OrbitHero";
 import { Marquee } from "@/components/site/Marquee";
 import { Section } from "@/components/site/Section";
 import { ToolCard } from "@/components/site/ToolCard";
+import { CollapsibleGrid } from "@/components/site/CollapsibleGrid";
 import { Button } from "@/components/ui/button";
 import { tools, services, stats } from "@/lib/site-data";
 import {
@@ -59,9 +60,9 @@ function Home() {
           </Button>
         }
       >
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <CollapsibleGrid cols="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {tools.slice(0, 8).map((t) => <ToolCard key={t.slug} tool={t} />)}
-        </div>
+        </CollapsibleGrid>
       </Section>
 
       {/* Services grid */}
@@ -76,7 +77,7 @@ function Home() {
           </Button>
         }
       >
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <CollapsibleGrid cols="sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
             <Link
               key={s.slug}
@@ -93,7 +94,7 @@ function Home() {
               </div>
             </Link>
           ))}
-        </div>
+        </CollapsibleGrid>
       </Section>
 
       {/* Giveaway CTA */}
