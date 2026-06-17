@@ -3,9 +3,12 @@ import { useState } from "react";
 import { Menu, X, ShoppingCart, Orbit, Phone } from "lucide-react";
 import { nav, contact, brand } from "@/lib/site-data";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/lib/cart";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { count } = useCart();
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 backdrop-blur-xl bg-background/70">
       {/* Top contact bar */}
@@ -48,9 +51,26 @@ export function Header() {
           >
             <Phone className="h-3.5 w-3.5" /> {contact.phone}
           </a>
-          <Button variant="ghost" size="icon" className="hidden sm:inline-flex">
+          <Link
+            to="/cart"
+            aria-label="Cart"
+            className="relative inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:border-primary/60 hover:text-primary transition"
+          >
             <ShoppingCart className="h-4 w-4" />
-          </Button>
+            <AnimatePresence>
+              {count > 0 && (
+                <motion.span
+                  key={count}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0 }}
+                  className="absolute -right-1.5 -top-1.5 grid h-5 min-w-5 place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground"
+                >
+                  {count}
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </Link>
           <Button asChild className="hidden sm:inline-flex bg-primary text-primary-foreground hover:bg-primary/90">
             <Link to="/tools">Explore Tools</Link>
           </Button>

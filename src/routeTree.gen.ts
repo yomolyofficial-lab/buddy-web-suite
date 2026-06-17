@@ -17,6 +17,8 @@ import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as PhysicalProductsRouteImport } from './routes/physical-products'
 import { Route as GiveawaysRouteImport } from './routes/giveaways'
 import { Route as CoursesHubRouteImport } from './routes/courses-hub'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as CartRouteImport } from './routes/cart'
 import { Route as AffiliateProgramRouteImport } from './routes/affiliate-program'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
@@ -66,6 +68,16 @@ const CoursesHubRoute = CoursesHubRouteImport.update({
   path: '/courses-hub',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AffiliateProgramRoute = AffiliateProgramRouteImport.update({
   id: '/affiliate-program',
   path: '/affiliate-program',
@@ -111,6 +123,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteWithChildren
   '/affiliate-program': typeof AffiliateProgramRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/courses-hub': typeof CoursesHubRoute
   '/giveaways': typeof GiveawaysRoute
   '/physical-products': typeof PhysicalProductsRoute
@@ -128,6 +142,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/affiliate-program': typeof AffiliateProgramRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/courses-hub': typeof CoursesHubRoute
   '/giveaways': typeof GiveawaysRoute
   '/physical-products': typeof PhysicalProductsRoute
@@ -147,6 +163,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteWithChildren
   '/affiliate-program': typeof AffiliateProgramRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/courses-hub': typeof CoursesHubRoute
   '/giveaways': typeof GiveawaysRoute
   '/physical-products': typeof PhysicalProductsRoute
@@ -167,6 +185,8 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/affiliate-program'
+    | '/cart'
+    | '/checkout'
     | '/courses-hub'
     | '/giveaways'
     | '/physical-products'
@@ -184,6 +204,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/affiliate-program'
+    | '/cart'
+    | '/checkout'
     | '/courses-hub'
     | '/giveaways'
     | '/physical-products'
@@ -202,6 +224,8 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/affiliate-program'
+    | '/cart'
+    | '/checkout'
     | '/courses-hub'
     | '/giveaways'
     | '/physical-products'
@@ -221,6 +245,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRouteWithChildren
   AffiliateProgramRoute: typeof AffiliateProgramRoute
+  CartRoute: typeof CartRoute
+  CheckoutRoute: typeof CheckoutRoute
   CoursesHubRoute: typeof CoursesHubRoute
   GiveawaysRoute: typeof GiveawaysRoute
   PhysicalProductsRoute: typeof PhysicalProductsRoute
@@ -287,6 +313,20 @@ declare module '@tanstack/react-router' {
       path: '/courses-hub'
       fullPath: '/courses-hub'
       preLoaderRoute: typeof CoursesHubRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/affiliate-program': {
@@ -370,6 +410,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRouteWithChildren,
   AffiliateProgramRoute: AffiliateProgramRoute,
+  CartRoute: CartRoute,
+  CheckoutRoute: CheckoutRoute,
   CoursesHubRoute: CoursesHubRoute,
   GiveawaysRoute: GiveawaysRoute,
   PhysicalProductsRoute: PhysicalProductsRoute,
